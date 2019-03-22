@@ -9,6 +9,8 @@ class MyWidget extends StatelessWidget {
         child: Text(
       "Hello, world!",
       textDirection: TextDirection.ltr,
+      style: TextStyle(
+          fontSize: 60.0, fontWeight: FontWeight.bold, color: Colors.red),
     ));
   }
 }
