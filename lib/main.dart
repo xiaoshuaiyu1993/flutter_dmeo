@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './demo/drawer_demo.dart';
 
 void main() => runApp(MyWidget());
 
@@ -9,7 +10,9 @@ class MyWidget extends StatelessWidget {
       home: Home(),
       debugShowCheckedModeBanner: false, // 设置导航栏上的debug标签隐藏
       // 设置APP主题
-      theme: ThemeData(primaryColor: Colors.lightBlue, splashColor: Color.fromARGB(0, 0, 0, 0)),
+      theme: ThemeData(
+          primaryColor: Colors.lightBlue,
+          splashColor: Color.fromARGB(0, 0, 0, 0)),
     );
   }
 }
@@ -21,11 +24,11 @@ class Home extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            tooltip: "这是菜单按钮", // 长按按钮是显示的提示语
-            onPressed: () => debugPrint("menu button is pressed!"),
-          ),
+          // leading: IconButton(
+          //   icon: Icon(Icons.menu),
+          //   tooltip: "这是菜单按钮", // 长按按钮是显示的提示语
+          //   onPressed: () => debugPrint("menu button is pressed!"),
+          // ),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.search),
@@ -54,6 +57,8 @@ class Home extends StatelessWidget {
                 size: 180.0, color: Colors.greenAccent),
           ],
         ),
+        // 添加drawer会自动在appBar上添加一个菜单按钮，点击菜单可以打开drawer
+        drawer: DrawerDemo(),
       ),
     );
   }
