@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './demo/drawer_demo.dart';
+import './demo/bottom_navigationbar_demo.dart';
+import './demo/listview_demo.dart';
 
 void main() => runApp(MyWidget());
 
@@ -50,8 +52,7 @@ class Home extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            Icon(Icons.sentiment_dissatisfied,
-                size: 180.0, color: Colors.greenAccent),
+            ListViewDemo(),
             Icon(Icons.flight_takeoff, size: 180.0, color: Colors.greenAccent),
             Icon(Icons.accessibility_new,
                 size: 180.0, color: Colors.greenAccent),
@@ -59,6 +60,7 @@ class Home extends StatelessWidget {
         ),
         // 添加drawer会自动在appBar上添加一个菜单按钮，点击菜单可以打开drawer
         drawer: DrawerDemo(),
+        bottomNavigationBar: BottomNavigationBarDemo(),
       ),
     );
   }
